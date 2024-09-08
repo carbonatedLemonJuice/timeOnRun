@@ -15,9 +15,9 @@ public class increaseMeter : MonoBehaviour
 
     private void Update()
     {
-        if (slider.value < slider.maxValue)
+        if (slider.value < slider.maxValue) //checks if slider value is less than max value
         {
-            slider.value = slider.value + increaseRate * Time.deltaTime;
+            slider.value = slider.value + increaseRate * Time.deltaTime; //increase slider value in respect to time
         }
     }
 }

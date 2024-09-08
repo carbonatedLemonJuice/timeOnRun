@@ -8,10 +8,10 @@ public class obstacleBehaviour : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        transform.Translate(Vector3.left * speed * Time.deltaTime); //sets movement behavour to obstacle(s)
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) //destroys obstacles in case its out of screen
     {
         if (collision.CompareTag("destruct"))
         {
