@@ -31,19 +31,23 @@ public class obstacleSpawner : MonoBehaviour
         //takes random index value of from spawnPosition array and store it in a game object
         int PosIndex = Random.Range(0, spawnPositions.Length);
         GameObject spawn = spawnPositions[PosIndex];
+        if (ObsIndex == 3)
+        {
+            spawn = spawnPositions[2];
+        }
 
         //spawns the obstacle at the selected position
         Instantiate(obstacle, spawn.transform.position, Quaternion.identity);
-        Debug.Log("spawning done");
+        //Debug.Log("spawning done");
     }
 
     private IEnumerator timer() //coroutine function to spawn platform
     {
-        Debug.Log("spawning start");
+        //Debug.Log("spawning start");
         spawnAble = false; //bool set to false 
         yield return new WaitForSeconds(Random.Range(spawnTimeMin, spawnTimeMax)); //random interval time is calculated
         spawnObstacle(); //function called
         spawnAble = true; //bool set to true after spawning
-        Debug.Log("spawning stopped");
+        //Debug.Log("spawning stopped");
     }
 }
