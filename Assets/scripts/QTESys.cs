@@ -29,8 +29,11 @@ public class QTESys : MonoBehaviour
         //time before QTE fails
         yield return new WaitForSecondsRealtime(timeToPress);
         QTEOut();
-        player.GetComponent<playerControl>().isGoingBack = true;
-        player.GetComponent<playerControl>().GoBackStart(1f);
+        if (Random.Range(0, 2) == 1)
+        {
+            player.GetComponent<playerControl>().isGoingBack = true;
+            player.GetComponent<playerControl>().GoBackStart(1f);
+        }
     }
     private void Update()
     {
@@ -38,8 +41,11 @@ public class QTESys : MonoBehaviour
         {
             if (faultyObstacle.name == "obstacle_4(Clone)")
             {
-                player.GetComponent<playerControl>().isGoingForward = true;
-                player.GetComponent<playerControl>().GoForwardStart(0.5f);
+                if (Random.Range(0, 3) == 1)
+                {
+                    player.GetComponent<playerControl>().isGoingForward = true;
+                    player.GetComponent<playerControl>().GoForwardStart(0.5f);
+                }
             }
             else
             {

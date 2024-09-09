@@ -7,7 +7,7 @@ public class playerControl : MonoBehaviour
 {
     [SerializeField] private int currentLine = 0; //allocates maximum and minimum y value player position can have
     [SerializeField] private float yDifferenceVal; //allocates the distance between two consequitive position
-    [SerializeField] private GameObject qteSys;
+    [SerializeField] private GameObject qteSys, timeEnt;
     public bool controlAble;
     private float speed = 0.1f;
     private float speedBack = 6;
@@ -50,15 +50,15 @@ public class playerControl : MonoBehaviour
         }
         if (!isGoingForward && !isGoingBack)
         {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
+            timeEnt.transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
         else if (isGoingBack)
         {
-            transform.Translate(Vector3.left * speedBack * Time.deltaTime);
+            timeEnt.transform.Translate(Vector3.right * speedBack * Time.deltaTime);
         }
         else
         {
-            transform.Translate(Vector3.right * speedBack * Time.deltaTime);
+            timeEnt.transform.Translate(Vector3.left * speedBack * Time.deltaTime);
 
         }
     }

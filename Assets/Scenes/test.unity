@@ -944,6 +944,7 @@ MonoBehaviour:
   currentLine: 0
   yDifferenceVal: 2.4
   qteSys: {fileID: 189919354}
+  timeEnt: {fileID: 1077552634}
   controlAble: 0
   isGoingForward: 0
   isGoingBack: 0
