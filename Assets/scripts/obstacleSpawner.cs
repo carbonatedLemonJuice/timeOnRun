@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class obstacleSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] obstacles; //array of obstacles
-    [SerializeField] private GameObject[] spawnPositions; //array of possible positions obstacles can spawn
+    [SerializeField] private GameObject[] RoadObstacles; //array of obstacles
+    [SerializeField] private GameObject[] pavementObstacles;
+    [SerializeField] private GameObject[] RoadSpawnPos; //array of possible positions obstacles can spawn
+    [SerializeField] private GameObject[] pavementSpawnPos;
     [SerializeField] private float spawnTimeMax, spawnTimeMin; //the interval in which obstacle(s) can spawn, takes random between the two
-    private bool spawnAble; //checks if spawning of obstacle is possible
+    private bool spawnAble, pavementSpawnable; //checks if spawning of obstacle is possible
 
     private void Start()
     {
         spawnAble = true; //at start set to true
+        pavementSpawnable = true;
     }
 
     private void Update()
@@ -20,20 +23,25 @@ public class obstacleSpawner : MonoBehaviour
         {
             StartCoroutine(timer());
         }
+
+        if (pavementSpawnable)
+        {
+            StartCoroutine(pavementTimer());
+        }
     }
 
-    private void spawnObstacle()
+    private void spawnRoadObstacle() //for spawning on road
     {
         //takes random index value of from obstacle array and store it in a game object
-        int ObsIndex = Random.Range(0, obstacles.Length);
-        GameObject obstacle = obstacles[ObsIndex];
+        int ObsIndex = Random.Range(0, RoadObstacles.Length);
+        GameObject obstacle = RoadObstacles[ObsIndex];
 
         //takes random index value of from spawnPosition array and store it in a game object
-        int PosIndex = Random.Range(0, spawnPositions.Length);
-        GameObject spawn = spawnPositions[PosIndex];
+        int PosIndex = Random.Range(0, RoadSpawnPos.Length);
+        GameObject spawn = RoadSpawnPos[PosIndex];
         if (ObsIndex == 3)
         {
-            spawn = spawnPositions[2];
+            spawn = RoadSpawnPos[1];
         }
 
         //spawns the obstacle at the selected position
@@ -46,8 +54,31 @@ public class obstacleSpawner : MonoBehaviour
         //Debug.Log("spawning start");
         spawnAble = false; //bool set to false 
         yield return new WaitForSeconds(Random.Range(spawnTimeMin, spawnTimeMax)); //random interval time is calculated
-        spawnObstacle(); //function called
+        spawnRoadObstacle(); //function called
         spawnAble = true; //bool set to true after spawning
         //Debug.Log("spawning stopped");
+    }
+
+    private IEnumerator pavementTimer() 
+    {
+        pavementSpawnable = false;
+        yield return new WaitForSeconds(Random.Range(spawnTimeMin, spawnTimeMax));
+        spawnPavementObstacle();
+        pavementSpawnable = true;
+    }
+
+    private void spawnPavementObstacle() //for spawning on pavement
+    {
+        //takes random index value of from obstacle array and store it in a game object
+        int ObsIndex = Random.Range(0, pavementObstacles.Length);
+        GameObject obstacle = pavementObstacles[ObsIndex];
+
+        //takes random index value of from spawnPosition array and store it in a game object
+        int PosIndex = Random.Range(0, pavementSpawnPos.Length);
+        GameObject spawn = pavementSpawnPos[PosIndex];
+
+        //spawns the obstacle at the selected position
+        Instantiate(obstacle, spawn.transform.position, Quaternion.identity);
+        //Debug.Log("spawning done");
     }
 }

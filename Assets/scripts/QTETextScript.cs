@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -19,11 +20,11 @@ public class QTETextScript : MonoBehaviour
             case "[Q]":
                 QTE.GetComponent<QTESys>().corKey = KeyCode.Q;
                 break;
-            case "[P]":
-                QTE.GetComponent<QTESys>().corKey = KeyCode.P;
+            case "[E]":
+                QTE.GetComponent<QTESys>().corKey = KeyCode.E;
                 break;
-            case "[U]":
-                QTE.GetComponent<QTESys>().corKey = KeyCode.U;
+            case "[T]":
+                QTE.GetComponent<QTESys>().corKey = KeyCode.T;
                 break;
         }
     }

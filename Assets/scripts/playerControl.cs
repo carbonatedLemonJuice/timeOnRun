@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class playerControl : MonoBehaviour
     [SerializeField] private int currentLine = 0; //allocates maximum and minimum y value player position can have
     [SerializeField] private float yDifferenceVal; //allocates the distance between two consequitive position
     [SerializeField] private GameObject qteSys;
+    public bool controlAble;
     private float speed = 0.1f;
     private float speedBack = 6;
     private float currentYvalue; //stores current y value of player
@@ -14,9 +16,14 @@ public class playerControl : MonoBehaviour
     public bool isGoingBack = false;
     private float timeBack = 0;
 
+    private void Start()
+    {
+        controlAble = true;
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) && controlAble)
         {
             currentYvalue = transform.position.y; //takes current y position of player
             if (currentLine <= 3) //checks if current y greater than min y
@@ -29,7 +36,7 @@ public class playerControl : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyDown (KeyCode.UpArrow))
+        else if (Input.GetKeyDown (KeyCode.UpArrow) && controlAble)
         {
             currentYvalue = transform.position.y;//takes current y position of player
             if (currentLine >= 1) //checks if current y less than max y
