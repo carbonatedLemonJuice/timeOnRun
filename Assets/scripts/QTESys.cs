@@ -32,7 +32,7 @@ public class QTESys : MonoBehaviour
         if (Random.Range(0, 2) == 1)
         {
             player.GetComponent<playerControl>().isGoingBack = true;
-            player.GetComponent<playerControl>().GoBackStart(1f);
+            player.GetComponent<playerControl>().GoBackStart(0.4f);
         }
     }
     private void Update()
@@ -50,7 +50,7 @@ public class QTESys : MonoBehaviour
             else
             {
                 player.GetComponent<playerControl>().isGoingBack = true;
-                player.GetComponent<playerControl>().GoBackStart(0.5f);
+                player.GetComponent<playerControl>().GoBackStart(0.3f);
             }
             QTEOut();
         }
@@ -71,6 +71,10 @@ public class QTESys : MonoBehaviour
         cam.Priority = 10;
         yield return new WaitForSeconds(0.15f); //changing priority is time dependant, if timescale set to zero, it wont work;
         Time.timeScale = 0;
+        if (!faultyObstacle.gameObject.GetComponent<obstacleBehaviour>().isLong)
+            faultyObstacle.gameObject.transform.position = new Vector3(player.transform.position.x + 1.5f, faultyObstacle.gameObject.transform.position.y, faultyObstacle.gameObject.transform.position.z);
+        else
+            faultyObstacle.gameObject.transform.position = new Vector3(player.transform.position.x + 2.5f, faultyObstacle.gameObject.transform.position.y, faultyObstacle.gameObject.transform.position.z);
     }
 
 }

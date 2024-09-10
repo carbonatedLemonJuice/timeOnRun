@@ -92,7 +92,10 @@ public class playerControl : MonoBehaviour
         {
             qteSys.SetActive(true);
             qteSys.GetComponent<QTESys>().faultyObstacle = collision.gameObject;
-            collision.gameObject.transform.position = new Vector3(this.transform.position.x + 1.5f, collision.gameObject.transform.position.y, collision.gameObject.transform.position.z);
+            if (!collision.gameObject.GetComponent<obstacleBehaviour>().isLong)
+                collision.gameObject.transform.position = new Vector3(this.transform.position.x + 1.5f, collision.gameObject.transform.position.y, collision.gameObject.transform.position.z);
+            else
+                collision.gameObject.transform.position = new Vector3(this.transform.position.x + 2.5f, collision.gameObject.transform.position.y, collision.gameObject.transform.position.z);
         }
         if (collision.CompareTag("destruct"))
         {
