@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class obstacleSpawner : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class obstacleSpawner : MonoBehaviour
     [SerializeField] private GameObject[] RoadSpawnPos; //array of possible positions obstacles can spawn
     [SerializeField] private GameObject[] pavementSpawnPos;
     [SerializeField] private float spawnTimeMax, spawnTimeMin; //the interval in which obstacle(s) can spawn, takes random between the two
+    [SerializeField] private Slider chaosSlider;
     private bool spawnAble, pavementSpawnable; //checks if spawning of obstacle is possible
 
     private void Start()
     {
+        chaosSlider = chaosSlider.GetComponent<Slider>();
         spawnAble = true; //at start set to true
         pavementSpawnable = true;
     }
@@ -24,7 +27,7 @@ public class obstacleSpawner : MonoBehaviour
             StartCoroutine(timer());
         }
 
-        if (pavementSpawnable)
+        if (pavementSpawnable && !spawnAble)
         {
             StartCoroutine(pavementTimer());
         }
@@ -39,13 +42,54 @@ public class obstacleSpawner : MonoBehaviour
         //takes random index value of from spawnPosition array and store it in a game object
         int PosIndex = Random.Range(0, RoadSpawnPos.Length);
         GameObject spawn = RoadSpawnPos[PosIndex];
-        if (ObsIndex == 3)
+
+        if (chaosSlider.value >= 12.5f)
         {
-            spawn = RoadSpawnPos[1];
+            Debug.Log("value greater than 12.5f");
+            if (Random.Range(0, 3) == 2)
+            {
+                if (ObsIndex != 3)
+                {
+                    GameObject carObs = Instantiate(obstacle, spawn.transform.position, Quaternion.identity);
+                    carObs.transform.localScale = new Vector3(5, -5, 5);
+                }
+
+                else
+                {
+                    Debug.Log("big boi coming up");
+                    Instantiate(obstacle, RoadSpawnPos[1].transform.position, Quaternion.identity);
+                }
+
+            }
+
+            else
+            {
+                if (ObsIndex != 3)
+                {
+                    Instantiate(obstacle, spawn.transform.position, Quaternion.identity);
+                }
+
+                else
+                {
+                    Instantiate(obstacle, RoadSpawnPos[1].transform.position, Quaternion.identity);
+                }
+            }
         }
 
+        else
+        {
+            if (ObsIndex != 3)
+            {
+                Instantiate(obstacle, spawn.transform.position, Quaternion.identity);
+            }
+
+            else
+            {
+                Instantiate(obstacle, RoadSpawnPos[1].transform.position, Quaternion.identity);
+            }
+        }
         //spawns the obstacle at the selected position
-        Instantiate(obstacle, spawn.transform.position, Quaternion.identity);
+
         //Debug.Log("spawning done");
     }
 
