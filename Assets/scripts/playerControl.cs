@@ -11,9 +11,9 @@ public class playerControl : MonoBehaviour
     [SerializeField] private int currentLine = 0; //allocates maximum and minimum y value player position can have
     [SerializeField] private float yDifferenceVal; //allocates the distance between two consequitive position
     [SerializeField] private GameObject qteSys, timeEnt;
+    [SerializeField] private float speedBack = 6;
+    [SerializeField] private float speed = 0.1f;
     public bool controlAble;
-    private float speed = 0.1f;
-    private float speedBack = 6;
     private float currentYvalue; //stores current y value of player
     public bool isGoingForward = false;
     public bool isGoingBack = false;
@@ -33,7 +33,6 @@ public class playerControl : MonoBehaviour
             if (currentLine <= 3) //checks if current y greater than min y
             {
                 //if so, moves the player down
-                Debug.Log("down arrow pressed");
                 currentYvalue -= yDifferenceVal;
                 currentLine += 1;
                 transform.position = new Vector3(transform.position.x, currentYvalue, transform.position.z);
@@ -46,7 +45,6 @@ public class playerControl : MonoBehaviour
             if (currentLine >= 1) //checks if current y less than max y
             {
                 //if so, moves player up
-                Debug.Log("up arrow pressed");
                 currentYvalue += yDifferenceVal;
                 currentLine -= 1;
                 transform.position = new Vector3(transform.position.x, currentYvalue, transform.position.z);

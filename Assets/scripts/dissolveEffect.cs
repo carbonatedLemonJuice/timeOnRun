@@ -26,7 +26,8 @@ public class dissolveEffect : MonoBehaviour
             num -= Time.deltaTime * decreaseVal; //decrease a num value over time
             mat.SetFloat("_fade", num); //sets num to fade in material
             yield return null;
-            Debug.Log("num value is : " + num);
+            //Debug.Log("num value is : " + num);
         }
+        Destroy(this.gameObject);
     }
 }

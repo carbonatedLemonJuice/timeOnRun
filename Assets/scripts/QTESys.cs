@@ -18,6 +18,7 @@ public class QTESys : MonoBehaviour
     private TMP_Text myText;
     private Vector3 cameraDefault;
     [SerializeField] private CinemachineVirtualCamera cam;
+    private float qteTimer;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class QTESys : MonoBehaviour
         
         StartCoroutine(timer()); //calling coroutine to switch camera and pause time
         playerControl.instance.controlAble = false;
+        qteTimer = 0;
         StartCoroutine(TimeToFail());
     }
 
@@ -40,11 +42,13 @@ public class QTESys : MonoBehaviour
         if (Random.Range(0, 2) == 1)
         {
             playerControl.instance.isGoingBack = true;
-            playerControl.instance.GoBackStart(0.4f);
+            playerControl.instance.GoBackStart(timeToPress);
         }
     }
     private void Update()
     {
+        qteTimer += Time.unscaledDeltaTime;
+        Debug.Log(faultyObstacle.name);
         if (Input.GetKeyDown(corKey))
         {
             if (faultyObstacle.name == "obstacle_4(Clone)")
@@ -52,13 +56,14 @@ public class QTESys : MonoBehaviour
                 if (Random.Range(0, 3) == 1)
                 {
                     playerControl.instance.isGoingForward = true;
-                    playerControl.instance.GoForwardStart(0.5f);
+                    playerControl.instance.GoForwardStart(1.8f);
                 }
             }
             else
             {
                 playerControl.instance.isGoingBack = true;
-                playerControl.instance.GoBackStart(0.3f);
+                playerControl.instance.GoBackStart(qteTimer);
+                Debug.Log(qteTimer);
             }
             QTEOut();
         }

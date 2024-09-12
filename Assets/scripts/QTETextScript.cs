@@ -13,7 +13,7 @@ public class QTETextScript : MonoBehaviour
 
     private void OnEnable()
     {
-        GetComponent<TMP_Text>().text = buttons[Random.Range(0, 3)];
+        GetComponent<TMP_Text>().text = buttons[Random.Range(0, 6)];
         //asigning of the correct key to press
         switch (GetComponent<TMP_Text>().text)
         {
@@ -25,6 +25,15 @@ public class QTETextScript : MonoBehaviour
                 break;
             case "[T]":
                 QTE.GetComponent<QTESys>().corKey = KeyCode.T;
+                break;
+            case "[R]":
+                QTE.GetComponent<QTESys>().corKey = KeyCode.R;
+                break;
+            case "[W]":
+                QTE.GetComponent<QTESys>().corKey = KeyCode.W;
+                break;
+            case "[S]":
+                QTE.GetComponent<QTESys>().corKey = KeyCode.S;
                 break;
         }
     }
