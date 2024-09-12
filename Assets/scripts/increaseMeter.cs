@@ -24,12 +24,22 @@ public class increaseMeter : MonoBehaviour
 
         if (slider.value > 8.5f && slider.value < 9)
         {
+            glitchEffectIncrease();
+        }
+
+        if (slider.value > 9f && slider.value < 15)
+        {
             glitchEffectDecrease();
         }
 
-        if (slider.value > 9f)
+        if (slider.value > 14.5f && slider.value < 15)
         {
-            glitchEffectInrease();
+            glitchEffectIncrease();
+        }
+
+        if (slider.value > 15f)
+        {
+            glitchEffectDecrease();
         }
     }
 
@@ -41,7 +51,7 @@ public class increaseMeter : MonoBehaviour
         }
     }
 
-    private void glitchEffectInrease()
+    private void glitchEffectIncrease()
     {
         while (Camera.main.GetComponent<DigitalGlitch>().intensity < 0.6f)
         {
