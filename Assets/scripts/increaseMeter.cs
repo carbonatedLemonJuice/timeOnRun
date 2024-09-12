@@ -22,7 +22,7 @@ public class increaseMeter : MonoBehaviour
             slider.value += increaseRate * Time.deltaTime; //increase slider value in respect to time
         }
 
-        if (slider.value > 8.5f && slider.value < 9)
+        if (slider.value > 8.5f && slider.value < 9) //increase slider when value between
         {
             glitchEffectIncrease();
         }
