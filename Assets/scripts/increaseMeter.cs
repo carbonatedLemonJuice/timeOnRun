@@ -1,3 +1,4 @@
+using Kino;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,8 @@ using UnityEngine.UI;
 
 public class increaseMeter : MonoBehaviour
 {
-    [SerializeField] private float increaseRate;
+    [SerializeField] private float increaseRate, glitchRate = 0.65f;
+    [SerializeField] private float maxTime, minTime;
     private Slider slider;
 
     private void Start()
@@ -17,7 +19,33 @@ public class increaseMeter : MonoBehaviour
     {
         if (slider.value < slider.maxValue) //checks if slider value is less than max value
         {
-            slider.value = slider.value + increaseRate * Time.deltaTime; //increase slider value in respect to time
+            slider.value += increaseRate * Time.deltaTime; //increase slider value in respect to time
+        }
+
+        if (slider.value > 8.5f && slider.value < 9)
+        {
+            glitchEffectDecrease();
+        }
+
+        if (slider.value > 9f)
+        {
+            glitchEffectInrease();
+        }
+    }
+
+    private void glitchEffectDecrease()
+    {
+        while (Camera.main.GetComponent<DigitalGlitch>().intensity > 0)
+        {
+            Camera.main.GetComponent<DigitalGlitch>().intensity -= Time.deltaTime * (glitchRate + 2.5f);
+        }
+    }
+
+    private void glitchEffectInrease()
+    {
+        while (Camera.main.GetComponent<DigitalGlitch>().intensity < 0.6f)
+        {
+            Camera.main.GetComponent<DigitalGlitch>().intensity += glitchRate * Time.deltaTime;
         }
     }
 }

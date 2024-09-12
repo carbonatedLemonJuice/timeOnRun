@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class obstacleBehaviour : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    public float speed;
     public bool isLong;
 
     private void Update()

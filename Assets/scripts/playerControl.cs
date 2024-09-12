@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class playerControl : MonoBehaviour
 {
+    public static playerControl instance;
+
+    public QTESys QTESys;
     [SerializeField] private int currentLine = 0; //allocates maximum and minimum y value player position can have
     [SerializeField] private float yDifferenceVal; //allocates the distance between two consequitive position
     [SerializeField] private GameObject qteSys, timeEnt;
@@ -18,6 +21,7 @@ public class playerControl : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
         controlAble = true;
     }
 
@@ -91,7 +95,7 @@ public class playerControl : MonoBehaviour
         if (collision.CompareTag("obstacle"))
         {
             qteSys.SetActive(true);
-            qteSys.GetComponent<QTESys>().faultyObstacle = collision.gameObject;
+            QTESys.instance.faultyObstacle = collision.gameObject;
             if (!collision.gameObject.GetComponent<obstacleBehaviour>().isLong)
                 collision.gameObject.transform.position = new Vector3(this.transform.position.x + 1.5f, collision.gameObject.transform.position.y, collision.gameObject.transform.position.z);
             else

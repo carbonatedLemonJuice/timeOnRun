@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 public class QTESys : MonoBehaviour
 {
+    public static QTESys instance;
+
+    public playerControl playerControl;
     [SerializeField] GameObject qteText, player;
     public GameObject faultyObstacle;
     public KeyCode corKey;
@@ -16,11 +19,16 @@ public class QTESys : MonoBehaviour
     private Vector3 cameraDefault;
     [SerializeField] private CinemachineVirtualCamera cam;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void OnEnable()
     {
         
         StartCoroutine(timer()); //calling coroutine to switch camera and pause time
-        player.GetComponent<playerControl>().controlAble = false;
+        playerControl.instance.controlAble = false;
         StartCoroutine(TimeToFail());
     }
 
@@ -31,8 +39,8 @@ public class QTESys : MonoBehaviour
         QTEOut();
         if (Random.Range(0, 2) == 1)
         {
-            player.GetComponent<playerControl>().isGoingBack = true;
-            player.GetComponent<playerControl>().GoBackStart(0.4f);
+            playerControl.instance.isGoingBack = true;
+            playerControl.instance.GoBackStart(0.4f);
         }
     }
     private void Update()
@@ -43,14 +51,14 @@ public class QTESys : MonoBehaviour
             {
                 if (Random.Range(0, 3) == 1)
                 {
-                    player.GetComponent<playerControl>().isGoingForward = true;
-                    player.GetComponent<playerControl>().GoForwardStart(0.5f);
+                    playerControl.instance.isGoingForward = true;
+                    playerControl.instance.GoForwardStart(0.5f);
                 }
             }
             else
             {
-                player.GetComponent<playerControl>().isGoingBack = true;
-                player.GetComponent<playerControl>().GoBackStart(0.3f);
+                playerControl.instance.isGoingBack = true;
+                playerControl.instance.GoBackStart(0.3f);
             }
             QTEOut();
         }
@@ -59,8 +67,10 @@ public class QTESys : MonoBehaviour
     private void QTEOut()
     {
         //default view of camera etc.
-        player.GetComponent<playerControl>().controlAble = true;
-        Destroy(faultyObstacle);
+        playerControl.instance.controlAble = true;
+        faultyObstacle.GetComponent<BoxCollider2D>().enabled = false;
+        faultyObstacle.GetComponent<obstacleBehaviour>().speed = 0;
+        faultyObstacle.GetComponent<dissolveEffect>().callFade();
         Time.timeScale = 1f;
         cam.Priority = 0;
         this.gameObject.SetActive(false);
