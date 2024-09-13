@@ -136,12 +136,12 @@ GameObject:
   - component: {fileID: 57356399}
   - component: {fileID: 57356398}
   m_Layer: 0
-  m_Name: background
+  m_Name: presentBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &57356397
 Transform:
   m_ObjectHideFlags: 0
@@ -821,6 +821,7 @@ Transform:
   - {fileID: 1866705084}
   - {fileID: 1497877506}
   - {fileID: 57356397}
+  - {fileID: 908933317}
   - {fileID: 2093126588}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -954,7 +955,7 @@ GameObject:
   - component: {fileID: 806543942}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1155,6 +1156,103 @@ Transform:
   - {fileID: 479207757}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &908933316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 908933317}
+  - component: {fileID: 908933320}
+  - component: {fileID: 908933319}
+  - component: {fileID: 908933318}
+  m_Layer: 0
+  m_Name: pastBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &908933317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908933316}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 13.1841, y: 7.2202, z: 15.87}
+  m_LocalScale: {x: 2.342963, y: 1, z: 0.75706536}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 575115117}
+  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+--- !u!114 &908933318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908933316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a33fd9209929940ac978427a016fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.005
+--- !u!23 &908933319
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908933316}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 8ffd14f3b112d3447a773df5f564af00, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &908933320
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908933316}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1012643558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,8 +1390,8 @@ MonoBehaviour:
   glitchRate: 0.65
   maxTime: 0
   minTime: 0
-  presentBG: {fileID: 0}
-  mixBG: {fileID: 0}
+  presentBG: {fileID: 57356396}
+  mixBG: {fileID: 908933316}
 --- !u!1 &1077552634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,7 +2333,7 @@ MonoBehaviour:
   - {fileID: 7542539353264371547, guid: 19c444a7505f021449ff681def30513d, type: 3}
   - {fileID: 1353739476233073206, guid: 15dade4150ac160418165bd1561d58e5, type: 3}
   - {fileID: 3338599701788866555, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-  - {fileID: 4924122230222891888, guid: c24e3ec09e4a8084eb8cdc37f5c18c37, type: 3}
+  - {fileID: 1249937856417616069, guid: 35a9a2b703adec8428a8603705985eb1, type: 3}
   pavementObstacles:
   - {fileID: 2671292487074470726, guid: 78857b31022073a42b07209049cd6772, type: 3}
   - {fileID: 6556354305662677765, guid: 755d1e41cf7665d4dabed397c3707afd, type: 3}

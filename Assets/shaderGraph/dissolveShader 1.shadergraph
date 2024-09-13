@@ -1323,7 +1323,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Scale",
     "m_StageCapability": 3,
-    "m_Value": 51.20000076293945,
+    "m_Value": 52.0,
     "m_DefaultValue": 500.0,
     "m_Labels": []
 }
@@ -1364,7 +1364,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"cda9b8ba9d7abc042813d5f598596953\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,

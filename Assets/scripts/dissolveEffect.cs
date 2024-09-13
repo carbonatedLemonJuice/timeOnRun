@@ -23,7 +23,7 @@ public class dissolveEffect : MonoBehaviour
     {
         while (mat.GetFloat("_fade") > 0) //runs while fade value in material is greater than zero
         {
-            num -= Time.deltaTime * decreaseVal; //decrease a num value over time
+            num -= Time.unscaledDeltaTime * decreaseVal; //decrease a num value over time
             mat.SetFloat("_fade", num); //sets num to fade in material
             yield return null;
             //Debug.Log("num value is : " + num);

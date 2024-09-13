@@ -54,7 +54,7 @@ public class increaseMeter : MonoBehaviour
     {
         while (Camera.main.GetComponent<DigitalGlitch>().intensity > 0)
         {
-            Camera.main.GetComponent<DigitalGlitch>().intensity -= Time.deltaTime * (glitchRate + 2.5f);
+            Camera.main.GetComponent<DigitalGlitch>().intensity -= Time.unscaledDeltaTime * (glitchRate + 2.5f);
         }
     }
 
@@ -62,7 +62,7 @@ public class increaseMeter : MonoBehaviour
     {
         while (Camera.main.GetComponent<DigitalGlitch>().intensity < 0.6f)
         {
-            Camera.main.GetComponent<DigitalGlitch>().intensity += glitchRate * Time.deltaTime;
+            Camera.main.GetComponent<DigitalGlitch>().intensity += glitchRate * Time.unscaledDeltaTime;
         }
     }
 }
