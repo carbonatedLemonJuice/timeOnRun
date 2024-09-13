@@ -8,7 +8,9 @@ public class increaseMeter : MonoBehaviour
 {
     [SerializeField] private float increaseRate, glitchRate = 0.65f;
     [SerializeField] private float maxTime, minTime;
+    [SerializeField] GameObject presentBG, mixBG;
     private Slider slider;
+    
 
     private void Start()
     {
@@ -29,16 +31,21 @@ public class increaseMeter : MonoBehaviour
 
         if (slider.value > 9f && slider.value < 15)
         {
+            mixBG.SetActive(true);
+            presentBG.SetActive(false);
             glitchEffectDecrease();
         }
 
         if (slider.value > 14.5f && slider.value < 15)
         {
+            presentBG.SetActive(true);
+            mixBG.SetActive(false);
             glitchEffectIncrease();
         }
 
         if (slider.value > 15f)
         {
+            
             glitchEffectDecrease();
         }
     }

@@ -30,7 +30,7 @@ public class playerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow) && controlAble)
         {
             currentYvalue = transform.position.y; //takes current y position of player
-            if (currentLine <= 3) //checks if current y greater than min y
+            if (currentLine < 3) //checks if current y greater than min y
             {
                 //if so, moves the player down
                 currentYvalue -= yDifferenceVal;
