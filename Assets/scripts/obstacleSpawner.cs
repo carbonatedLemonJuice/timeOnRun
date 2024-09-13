@@ -5,11 +5,19 @@ using UnityEngine.UI;
 
 public class obstacleSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] RoadObstacles; //array of obstacles
-    [SerializeField] private GameObject[] pavementObstacles;
+    [SerializeField] private GameObject[] RoadObstaclesDefault; //array of obstacles
+    [SerializeField] private GameObject[] pavementObstaclesDefault;
+    [SerializeField] private GameObject[] RoadObstaclesPast; //array of obstacles
+    [SerializeField] private GameObject[] pavementObstaclesPast;
+    [SerializeField] private GameObject[] RoadObstaclesFuture; //array of obstacles
+    [SerializeField] private GameObject[] pavementObstaclesFuture;
+    [SerializeField] private GameObject[] RoadObstaclesMix; //array of obstacles
+    [SerializeField] private GameObject[] pavementObstaclesMix;
     [SerializeField] private GameObject[] RoadSpawnPos; //array of possible positions obstacles can spawn
     [SerializeField] private GameObject[] pavementSpawnPos;
     [SerializeField] private float spawnTimeMax, spawnTimeMin; //the interval in which obstacle(s) can spawn, takes random between the two
+    private GameObject[] currentType;
+    private GameObject[] currentTypePavement;
     [SerializeField] private Slider chaosSlider;
     private bool spawnAble, pavementSpawnable; //checks if spawning of obstacle is possible
 
@@ -31,13 +39,34 @@ public class obstacleSpawner : MonoBehaviour
         {
             StartCoroutine(pavementTimer());
         }
+        
+        switch (GameManagement.gameStage)
+        {
+            case "default":
+                currentType = RoadObstaclesDefault;
+                currentTypePavement = pavementObstaclesDefault;
+                break;
+            case "past":
+                currentType = RoadObstaclesPast;
+                currentTypePavement = pavementObstaclesPast;
+                break;
+            case "future":
+                currentType = RoadObstaclesFuture;
+                currentTypePavement = pavementObstaclesFuture;
+                break;
+            case "mix":
+                currentType = RoadObstaclesMix;
+                currentTypePavement = pavementObstaclesMix;
+                break;
+        }
     }
 
     private void spawnRoadObstacle() //for spawning on road
     {
         //takes random index value of from obstacle array and store it in a game object
-        int ObsIndex = Random.Range(0, RoadObstacles.Length);
-        GameObject obstacle = RoadObstacles[ObsIndex];
+
+        int ObsIndex = Random.Range(0, currentType.Length);
+        GameObject obstacle = currentType[ObsIndex];
 
         //takes random index value of from spawnPosition array and store it in a game object
         int PosIndex = Random.Range(0, RoadSpawnPos.Length);
@@ -114,8 +143,8 @@ public class obstacleSpawner : MonoBehaviour
     private void spawnPavementObstacle() //for spawning on pavement
     {
         //takes random index value of from obstacle array and store it in a game object
-        int ObsIndex = Random.Range(0, pavementObstacles.Length);
-        GameObject obstacle = pavementObstacles[ObsIndex];
+        int ObsIndex = Random.Range(0, currentTypePavement.Length);
+        GameObject obstacle = currentTypePavement[ObsIndex];
 
         //takes random index value of from spawnPosition array and store it in a game object
         int PosIndex = Random.Range(0, pavementSpawnPos.Length);

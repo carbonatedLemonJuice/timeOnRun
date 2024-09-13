@@ -51,7 +51,7 @@ public class QTESys : MonoBehaviour
         Debug.Log(faultyObstacle.name);
         if (Input.GetKeyDown(corKey))
         {
-            if (faultyObstacle.name == "obstacle_4(Clone)")
+            if (faultyObstacle.name == "ThreeHoles(Clone)")
             {
                 if (Random.Range(0, 3) == 1)
                 {

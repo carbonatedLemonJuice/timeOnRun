@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 6252620566825434575}
   - component: {fileID: 6073704326883105189}
   - component: {fileID: 5950193848463688400}
-  - component: {fileID: -2752364768653360165}
-  - component: {fileID: -5781498374344785131}
   - component: {fileID: 3526542130485284618}
   m_Layer: 0
   m_Name: Caveman1
@@ -34,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -125,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 17.5
-  isLong: 0
+  isLong: 1
 --- !u!114 &6073704326883105189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,32 +181,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &-2752364768653360165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9105308292575402839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0176539d6f525384ea77e74202e056b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-5781498374344785131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9105308292575402839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d783f8c2778f4ed47b5f0ab4fbf1f579, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 17.5
-  isLong: 0
 --- !u!50 &3526542130485284618
 Rigidbody2D:
   serializedVersion: 4

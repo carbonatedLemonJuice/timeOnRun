@@ -27,6 +27,7 @@ public class increaseMeter : MonoBehaviour
         if (slider.value > 8.5f && slider.value < 9) //increase slider when value between
         {
             glitchEffectIncrease();
+            GameManagement.gameStage = "past";
         }
 
         if (slider.value > 9f && slider.value < 15)
@@ -41,12 +42,14 @@ public class increaseMeter : MonoBehaviour
             presentBG.SetActive(true);
             mixBG.SetActive(false);
             glitchEffectIncrease();
+            GameManagement.gameStage = "future";
         }
 
         if (slider.value > 15f)
         {
             
             glitchEffectDecrease();
+            GameManagement.gameStage = "mix";
         }
     }
 

@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &57356397
 Transform:
   m_ObjectHideFlags: 0
@@ -564,7 +564,7 @@ Transform:
   m_GameObject: {fileID: 479207756}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.17, y: -3.567771, z: -1}
+  m_LocalPosition: {x: 14.17, y: -3.1, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -934,7 +934,7 @@ Transform:
   m_GameObject: {fileID: 651744154}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.17, y: -1.167771, z: -1}
+  m_LocalPosition: {x: 14.17, y: -0.79, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1174,7 +1174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &908933317
 Transform:
   m_ObjectHideFlags: 0
@@ -1620,75 +1620,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122761057}
   m_CullTransparentMesh: 1
---- !u!1001 &1284485618
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 13884081827928813, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 13884081827928813, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 3338599701788866555, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_Name
-      value: RedCar
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637703526131912166, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_LocalScale.y
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637703526131912166, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.11456
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637703526131912166, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.14345998
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637703526131912166, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637703526131912166, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637703526131912166, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637703526131912166, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637703526131912166, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637703526131912166, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637703526131912166, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637703526131912166, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
 --- !u!1 &1297650041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,6 +1800,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1437492182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1437492183}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1437492183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437492182}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3003954, y: 2.168551, z: 0.05580954}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1481692010
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,7 +2140,7 @@ Transform:
   m_GameObject: {fileID: 1547377671}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.17, y: 1.2322291, z: -1}
+  m_LocalPosition: {x: 14.17, y: 1.66, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2398,14 +2360,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa35334c2b89cc24084671675207615f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoadObstacles:
+  RoadObstaclesDefault:
   - {fileID: 7542539353264371547, guid: 19c444a7505f021449ff681def30513d, type: 3}
   - {fileID: 1353739476233073206, guid: 15dade4150ac160418165bd1561d58e5, type: 3}
   - {fileID: 3338599701788866555, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
-  - {fileID: 1249937856417616069, guid: 35a9a2b703adec8428a8603705985eb1, type: 3}
-  pavementObstacles:
+  - {fileID: 5093066523599968667, guid: 2c38f69ccc7f407488879f78a716f064, type: 3}
+  pavementObstaclesDefault:
+  - {fileID: 6556354305662677765, guid: 755d1e41cf7665d4dabed397c3707afd, type: 3}
+  - {fileID: 2671292487074470726, guid: 78857b31022073a42b07209049cd6772, type: 3}
+  RoadObstaclesPast:
+  - {fileID: 7542539353264371547, guid: 19c444a7505f021449ff681def30513d, type: 3}
+  - {fileID: 3338599701788866555, guid: 770a68e4cb0b40f428e941147c28fa47, type: 3}
+  - {fileID: 7275503049849174538, guid: 5355b1ade4e68004195c110f2c3cb159, type: 3}
+  - {fileID: 5093066523599968667, guid: 2c38f69ccc7f407488879f78a716f064, type: 3}
+  - {fileID: 9105308292575402839, guid: cb0552ec5600c5e4b87dc9c20d997880, type: 3}
+  pavementObstaclesPast:
+  - {fileID: 1760259011472094481, guid: 3fd30ba5150ecad4d8482e1ca24b44c8, type: 3}
+  - {fileID: 2671292487074470726, guid: 78857b31022073a42b07209049cd6772, type: 3}
+  RoadObstaclesFuture:
+  - {fileID: 4251332720674817419, guid: 91fb61c176c9eeb41b1880bbebba3039, type: 3}
+  - {fileID: 7698497645101670434, guid: 634e78951612b664fb27a808a2b3fe19, type: 3}
+  - {fileID: 8047412559314275551, guid: 4ada69ebfcfbd6449a917d5fa788341f, type: 3}
+  - {fileID: 5093066523599968667, guid: 2c38f69ccc7f407488879f78a716f064, type: 3}
+  - {fileID: 1353739476233073206, guid: 15dade4150ac160418165bd1561d58e5, type: 3}
+  pavementObstaclesFuture:
+  - {fileID: 6556354305662677765, guid: 755d1e41cf7665d4dabed397c3707afd, type: 3}
+  - {fileID: 1760259011472094481, guid: 3fd30ba5150ecad4d8482e1ca24b44c8, type: 3}
+  RoadObstaclesMix:
+  - {fileID: 2413391572463028204, guid: e2a4e42a7ad7ab44487f8a51b0509df0, type: 3}
+  - {fileID: 4251332720674817419, guid: 91fb61c176c9eeb41b1880bbebba3039, type: 3}
+  - {fileID: 7698497645101670434, guid: 634e78951612b664fb27a808a2b3fe19, type: 3}
+  - {fileID: 5093066523599968667, guid: 2c38f69ccc7f407488879f78a716f064, type: 3}
+  - {fileID: 7275503049849174538, guid: 5355b1ade4e68004195c110f2c3cb159, type: 3}
+  pavementObstaclesMix:
   - {fileID: 2671292487074470726, guid: 78857b31022073a42b07209049cd6772, type: 3}
   - {fileID: 6556354305662677765, guid: 755d1e41cf7665d4dabed397c3707afd, type: 3}
+  - {fileID: 1760259011472094481, guid: 3fd30ba5150ecad4d8482e1ca24b44c8, type: 3}
   RoadSpawnPos:
   - {fileID: 1547377671}
   - {fileID: 651744154}
@@ -3029,4 +3019,4 @@ SceneRoots:
   - {fileID: 1077552637}
   - {fileID: 596760535}
   - {fileID: 1613851453}
-  - {fileID: 1284485618}
+  - {fileID: 1437492183}
