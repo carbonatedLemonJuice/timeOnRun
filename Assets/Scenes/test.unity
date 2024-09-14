@@ -2725,6 +2725,7 @@ MonoBehaviour:
   pavementObstaclesPast:
   - {fileID: 1760259011472094481, guid: 3fd30ba5150ecad4d8482e1ca24b44c8, type: 3}
   - {fileID: 2671292487074470726, guid: 78857b31022073a42b07209049cd6772, type: 3}
+  - {fileID: 1760259011472094481, guid: 05b35b99f34796048b26b0bbedcfa857, type: 3}
   RoadObstaclesFuture:
   - {fileID: 4251332720674817419, guid: 91fb61c176c9eeb41b1880bbebba3039, type: 3}
   - {fileID: 7698497645101670434, guid: 634e78951612b664fb27a808a2b3fe19, type: 3}
@@ -2734,7 +2735,7 @@ MonoBehaviour:
   pavementObstaclesFuture:
   - {fileID: 6556354305662677765, guid: 755d1e41cf7665d4dabed397c3707afd, type: 3}
   - {fileID: 1760259011472094481, guid: 3fd30ba5150ecad4d8482e1ca24b44c8, type: 3}
-  - {fileID: 5882510111927217101, guid: a5ec9e4291ef3c94b87639e7fefa3453, type: 3}
+  - {fileID: 1760259011472094481, guid: 05b35b99f34796048b26b0bbedcfa857, type: 3}
   - {fileID: 9076504237500865522, guid: db49ae9e60e0eb54ea45fb419142a71f, type: 3}
   RoadObstaclesMix:
   - {fileID: 2413391572463028204, guid: e2a4e42a7ad7ab44487f8a51b0509df0, type: 3}
@@ -2749,6 +2750,7 @@ MonoBehaviour:
   - {fileID: 1760259011472094481, guid: 3fd30ba5150ecad4d8482e1ca24b44c8, type: 3}
   - {fileID: 5882510111927217101, guid: a5ec9e4291ef3c94b87639e7fefa3453, type: 3}
   - {fileID: 9076504237500865522, guid: db49ae9e60e0eb54ea45fb419142a71f, type: 3}
+  - {fileID: 1760259011472094481, guid: 05b35b99f34796048b26b0bbedcfa857, type: 3}
   RoadSpawnPos:
   - {fileID: 1547377671}
   - {fileID: 651744154}
