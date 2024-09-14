@@ -80,7 +80,9 @@ public class obstacleSpawner : MonoBehaviour
                 if (ObsIndex != 3)
                 {
                     GameObject carObs = Instantiate(obstacle, spawn.transform.position, Quaternion.identity);
-                    carObs.transform.localScale = new Vector3(5, -5, 5);
+                    carObs.GetComponent<obstacleBehaviour>().speed = -17.5f;
+                    carObs.transform.Rotate(0, 180, 0);
+                    carObs.transform.localScale = new Vector3(carObs.transform.localScale.x, -carObs.transform.localScale.y, carObs.transform.localScale.z);
                 }
 
                 else
