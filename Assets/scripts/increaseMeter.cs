@@ -8,7 +8,8 @@ public class increaseMeter : MonoBehaviour
 {
     [SerializeField] private float increaseRate, glitchRate = 0.65f;
     [SerializeField] private float maxTime, minTime;
-    [SerializeField] GameObject presentBG, mixBG;
+    [SerializeField] GameObject presentBG, pastBG, futureBG, mixBG, usualRoad;
+    [SerializeField] GameObject[] futureRoads;
     private Slider slider;
     
 
@@ -32,23 +33,26 @@ public class increaseMeter : MonoBehaviour
 
         if (slider.value > 9f && slider.value < 15)
         {
-            mixBG.SetActive(true);
-            presentBG.SetActive(false);
             glitchEffectDecrease();
+            pastBG.SetActive(true);
+            presentBG.SetActive(false);
         }
 
         if (slider.value > 14.5f && slider.value < 15)
         {
-            presentBG.SetActive(true);
-            mixBG.SetActive(false);
             glitchEffectIncrease();
+            futureBG.SetActive(true);
+            pastBG.SetActive(false);
+            futureRoads[Random.Range(0, futureRoads.Length)].SetActive(true);
+            usualRoad.SetActive(false);
             GameManagement.gameStage = "future";
         }
 
         if (slider.value > 15f)
         {
-            
             glitchEffectDecrease();
+            futureBG.SetActive(false);
+            mixBG.SetActive(true);
             GameManagement.gameStage = "mix";
         }
     }
