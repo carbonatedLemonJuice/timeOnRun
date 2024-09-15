@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButtonScript : MonoBehaviour
 {
-    public void MainMenuPressed()
+    public void MainMenuPressed(int index)
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(index);
         Time.timeScale = 1;
     }
 }

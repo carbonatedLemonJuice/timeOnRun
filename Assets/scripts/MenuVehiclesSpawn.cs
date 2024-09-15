@@ -9,6 +9,11 @@ public class MenuVehiclesSpawn : MonoBehaviour
     [SerializeField] float vehiclesGap;
     private bool canSpawn = true;
 
+    private void Start()
+    {
+        canSpawn = true;
+    }
+
     private void Update()
     {
         if (canSpawn)

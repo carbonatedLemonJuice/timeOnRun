@@ -6,23 +6,48 @@ public class ButtonManager : MonoBehaviour
 {
     [SerializeField] GameObject pause, slider;
     public bool pauseAvailable;
+    [SerializeField] private GameObject tutorial, player;
+
     private void Start()
     {
         pauseAvailable = true;
+        Time.timeScale = 0;
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && pauseAvailable)
         {
-            PauseSwitcher();
+            pauseGame();
         }
+
+        tutorialActive();
+
     }
 
-    public void PauseSwitcher()
+    public void pauseGame()
     {
-        Time.timeScale = Time.timeScale == 1 ? 0 : 1;
-        GameObject.Find("player").GetComponent<playerControl>().controlAble = !GameObject.Find("player").GetComponent<playerControl>().controlAble;
-        pause.SetActive(!pause.activeSelf);
-        slider.SetActive(!slider.activeSelf);
+        Time.timeScale = 0;
+        pause.SetActive(true);
+        player.GetComponent<playerControl>().controlAble = false;
+    }
+
+    public void resumeGame()
+    {
+        Time.timeScale = 1;
+        pause.SetActive(false);
+        player.GetComponent<playerControl>().controlAble = true;   
+    }
+
+    private void tutorialActive()
+    {
+        if (tutorial.activeInHierarchy)
+        {
+            pauseAvailable = false;
+        }
+
+        else
+        {
+            pauseAvailable = true;
+        }
     }
 }
