@@ -11,7 +11,7 @@ public class QTESys : MonoBehaviour
     public static QTESys instance;
 
     public playerControl playerControl;
-    [SerializeField] GameObject qteText, player;
+    [SerializeField] GameObject qteText, player, manager;
     public GameObject faultyObstacle;
     public KeyCode corKey;
     public float timeToPress;
@@ -30,6 +30,7 @@ public class QTESys : MonoBehaviour
         
         StartCoroutine(timer()); //calling coroutine to switch camera and pause time
         playerControl.instance.controlAble = false;
+        manager.GetComponent<ButtonManager>().pauseAvailable = false;
         qteTimer = 0;
         StartCoroutine(TimeToFail());
     }
@@ -78,6 +79,7 @@ public class QTESys : MonoBehaviour
         faultyObstacle.GetComponent<dissolveEffect>().callFade();
         Time.timeScale = 1f;
         cam.Priority = 0;
+        manager.GetComponent<ButtonManager>().pauseAvailable = true;
         this.gameObject.SetActive(false);
     }
     
