@@ -28,6 +28,7 @@ public class ButtonManager : MonoBehaviour
     {
         Time.timeScale = 0;
         pause.SetActive(true);
+        slider.SetActive(false);
         player.GetComponent<playerControl>().controlAble = false;
     }
 
@@ -35,6 +36,8 @@ public class ButtonManager : MonoBehaviour
     {
         Time.timeScale = 1;
         pause.SetActive(false);
+        slider.SetActive(true);
+        pauseAvailable = true;
         player.GetComponent<playerControl>().controlAble = true;   
     }
 
@@ -43,11 +46,6 @@ public class ButtonManager : MonoBehaviour
         if (tutorial.activeInHierarchy)
         {
             pauseAvailable = false;
-        }
-
-        else
-        {
-            pauseAvailable = true;
         }
     }
 }

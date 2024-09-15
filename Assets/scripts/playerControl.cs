@@ -10,7 +10,7 @@ public class playerControl : MonoBehaviour
     public QTESys QTESys;
     [SerializeField] private int currentLine = 0; //allocates maximum and minimum y value player position can have
     [SerializeField] private float yDifferenceVal; //allocates the distance between two consequitive position
-    [SerializeField] private GameObject qteSys, timeEnt;
+    [SerializeField] private GameObject qteSys, timeEnt, blackOut;
     [SerializeField] private float speedBack = 6;
     [SerializeField] private float speed = 0.1f;
     public bool controlAble;
@@ -102,6 +102,14 @@ public class playerControl : MonoBehaviour
         if (collision.CompareTag("destruct"))
         {
             Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("Finish"))
+        {
+            GameObject.Find("Manager").GetComponent<ButtonManager>().pauseAvailable = false;
+            Time.timeScale = 0;
+            playerControl.instance.controlAble = false;
+            blackOut.SetActive(true);
         }
     }
 }

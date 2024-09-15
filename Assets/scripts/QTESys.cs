@@ -11,7 +11,7 @@ public class QTESys : MonoBehaviour
     public static QTESys instance;
 
     public playerControl playerControl;
-    [SerializeField] GameObject qteText, player, manager;
+    [SerializeField] GameObject qteText, player, manager, wrong;
     public GameObject faultyObstacle;
     public KeyCode corKey;
     public float timeToPress;
@@ -19,6 +19,7 @@ public class QTESys : MonoBehaviour
     private Vector3 cameraDefault;
     [SerializeField] private CinemachineVirtualCamera cam;
     private float qteTimer;
+    private bool fail;
 
     private void Awake()
     {
@@ -27,7 +28,8 @@ public class QTESys : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        fail = false;
+        StartCoroutine(AnyPressTime());
         StartCoroutine(timer()); //calling coroutine to switch camera and pause time
         playerControl.instance.controlAble = false;
         manager.GetComponent<ButtonManager>().pauseAvailable = false;
@@ -35,21 +37,21 @@ public class QTESys : MonoBehaviour
         StartCoroutine(TimeToFail());
     }
 
+    IEnumerator AnyPressTime()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        fail = true;
+    }
+
     IEnumerator TimeToFail()
     {
         //time before QTE fails
         yield return new WaitForSecondsRealtime(timeToPress);
-        QTEOut();
-        if (Random.Range(0, 2) == 1)
-        {
-            playerControl.instance.isGoingBack = true;
-            playerControl.instance.GoBackStart(timeToPress);
-        }
+        FailActions();
     }
     private void Update()
     {
         qteTimer += Time.unscaledDeltaTime;
-        Debug.Log(faultyObstacle.name);
         if (Input.GetKeyDown(corKey))
         {
             if (faultyObstacle.name == "ThreeHoles(Clone)")
@@ -64,10 +66,30 @@ public class QTESys : MonoBehaviour
             {
                 playerControl.instance.isGoingBack = true;
                 playerControl.instance.GoBackStart(qteTimer);
-                Debug.Log(qteTimer);
             }
             QTEOut();
         }
+    }
+
+    private void OnGUI()
+    {
+        Event e = Event.current;
+        if (e.isKey && e.keyCode != corKey && fail)
+        {
+            FailActions();
+        }
+        else if (e.isKey && fail)
+        {
+            fail = false;
+        }
+    }
+
+    private void FailActions()
+    {
+        QTEOut();
+        playerControl.instance.isGoingBack = true;
+        playerControl.instance.GoBackStart(timeToPress);
+        wrong.SetActive(true);
     }
 
     private void QTEOut()
