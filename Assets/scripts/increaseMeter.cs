@@ -4,9 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class increaseMeter : MonoBehaviour
 {
+    public playerControl playerControl;
+    [SerializeField] private GameObject buttonManager;
     [SerializeField] private float increaseRate, glitchRate = 0.85f;
     [SerializeField] private float maxTime, minTime;
     [SerializeField] GameObject presentBG, pastBG, futureBG, mixBG, usualRoad, pastRoad;
@@ -14,6 +17,7 @@ public class increaseMeter : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private AudioClip defaultMusic, pastMusic, futureMusic;
+    [SerializeField] private GameObject gameOver;
     private Slider slider;
     private bool spawnAble;
     
@@ -89,11 +93,19 @@ public class increaseMeter : MonoBehaviour
             GameManagement.gameStage = "mix";
         }
 
-        if (slider.value > 25.5f)
+        if (slider.value > 25.5f && slider.value < 26)
         {
             glitchEffectDecrease();
             mixBG.SetActive(true);
             futureBG.SetActive(false);
+        }
+
+        if (slider.value >= slider.maxValue)
+        {
+            gameOver.SetActive(true);
+            playerControl.instance.controlAble = false;
+            Time.timeScale = 0;
+            buttonManager.GetComponent<ButtonManager>().pauseAvailable = false;
         }
     }
 

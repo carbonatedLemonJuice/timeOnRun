@@ -7,6 +7,7 @@ TagManager:
   - destruct
   - obstacle
   - vehicle
+  - gameOver
   layers:
   - Default
   - TransparentFX

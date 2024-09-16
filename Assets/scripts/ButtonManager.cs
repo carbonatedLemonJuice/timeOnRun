@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
+    public static ButtonManager instance;
+
     [SerializeField] GameObject pause, slider;
     public bool pauseAvailable;
     [SerializeField] private GameObject tutorial, player;
 
     private void Start()
     {
+        instance = this;
         pauseAvailable = true;
         Time.timeScale = 0;
     }
