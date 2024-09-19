@@ -100,8 +100,8 @@ public class QTESys : MonoBehaviour
         faultyObstacle.GetComponent<obstacleBehaviour>().speed = 0;
         faultyObstacle.GetComponent<dissolveEffect>().callFade();
         Time.timeScale = 1f;
+        GameObject.Find("Manager").GetComponent<ButtonManager>().backToPause = true;
         cam.Priority = 0;
-        manager.GetComponent<ButtonManager>().pauseAvailable = true;
         this.gameObject.SetActive(false);
     }
     
@@ -115,5 +115,4 @@ public class QTESys : MonoBehaviour
         else
             faultyObstacle.gameObject.transform.position = new Vector3(player.transform.position.x + 2.5f, faultyObstacle.gameObject.transform.position.y, faultyObstacle.gameObject.transform.position.z);
     }
-
 }

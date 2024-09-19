@@ -882,7 +882,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 141621915}
+      - m_Target: {fileID: 190087903}
         m_TargetAssemblyTypeName: MainMenuButtonScript, Assembly-CSharp
         m_MethodName: MainMenuPressed
         m_Mode: 3
@@ -5116,6 +5116,7 @@ MonoBehaviour:
   pause: {fileID: 355841915}
   slider: {fileID: 1052580218}
   pauseAvailable: 0
+  backToPause: 0
   tutorial: {fileID: 573465889}
   player: {fileID: 1358043348}
 --- !u!1 &1481692010

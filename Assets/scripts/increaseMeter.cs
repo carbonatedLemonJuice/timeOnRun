@@ -18,6 +18,7 @@ public class increaseMeter : MonoBehaviour
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private AudioClip defaultMusic, pastMusic, futureMusic;
     [SerializeField] private GameObject gameOver;
+    bool timeCollapsed = false;
     private Slider slider;
     private bool spawnAble;
     
@@ -100,12 +101,14 @@ public class increaseMeter : MonoBehaviour
             futureBG.SetActive(false);
         }
 
-        if (slider.value >= slider.maxValue)
+        if (slider.value >= slider.maxValue && !timeCollapsed)
         {
             gameOver.SetActive(true);
             playerControl.instance.controlAble = false;
+            GameManagement.gameStage = "default";
             Time.timeScale = 0;
             buttonManager.GetComponent<ButtonManager>().pauseAvailable = false;
+            timeCollapsed = true;
         }
     }
 

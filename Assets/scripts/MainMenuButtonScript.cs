@@ -7,7 +7,9 @@ public class MainMenuButtonScript : MonoBehaviour
 {
     public void MainMenuPressed(int index)
     {
-        SceneManager.LoadScene(index);
         Time.timeScale = 1;
+        SceneManager.LoadScene(index);
+        GameManagement.gameStage = "default";
+
     }
 }

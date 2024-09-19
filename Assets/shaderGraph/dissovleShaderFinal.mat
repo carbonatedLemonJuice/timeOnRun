@@ -48,6 +48,6 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _fade: -0.0013474037
+    - _fade: -0.00029634894
     m_Colors: []
   m_BuildTextureStacks: []

@@ -349,6 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 312058128}
   - component: {fileID: 312058129}
+  - component: {fileID: 312058130}
   m_Layer: 0
   m_Name: Robot2
   m_TagString: Untagged
@@ -412,7 +413,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7095a27b2a250774b9f17ec655bd5cd6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 370e14684e0bea842998adeb7787b97c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -423,6 +424,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &312058130
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312058127}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1cb6b19831717549974cb2ff261e729, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &378968552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1483954094}
   - component: {fileID: 1483954095}
+  - component: {fileID: 1483954096}
   m_Layer: 0
   m_Name: Caveman4
   m_TagString: Untagged
@@ -1386,7 +1409,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a3bcbe4df8ee36444b1aadc55be0e1dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 323517c37cdb24e448cf6f4f6b27aff1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1397,6 +1420,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1483954096
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483954093}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 38e80c1dc460d2d4ca233ad4e3a3634a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1522847067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,7 +1610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4994048324473277934, guid: 6077fb2d1a96e5b4b9adcb2bee86c324, type: 3}
       propertyPath: speed
-      value: 17.5
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6785640472476818513, guid: 6077fb2d1a96e5b4b9adcb2bee86c324, type: 3}
       propertyPath: m_Name
@@ -1815,7 +1859,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cda9b8ba9d7abc042813d5f598596953, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e0868c31abc68b46924a8edb168e828, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2021,6 +2065,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2047397011}
   - component: {fileID: 2047397012}
+  - component: {fileID: 2047397013}
   m_Layer: 0
   m_Name: Dinosaur1
   m_TagString: Untagged
@@ -2084,7 +2129,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bf9fd7f5ced40bd4fa806e63bba71d50, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b14800921074ed4ba6282431bb75df2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2095,6 +2140,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2047397013
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047397010}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2337ad83470139048a19777e4adce053, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2053646581
 GameObject:
   m_ObjectHideFlags: 0

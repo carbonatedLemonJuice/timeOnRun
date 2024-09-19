@@ -7,13 +7,14 @@ public class ButtonManager : MonoBehaviour
     public static ButtonManager instance;
 
     [SerializeField] GameObject pause, slider;
-    public bool pauseAvailable;
+    public bool pauseAvailable, backToPause;
     [SerializeField] private GameObject tutorial, player;
 
     private void Start()
     {
         instance = this;
         pauseAvailable = true;
+        backToPause = false;
         Time.timeScale = 0;
     }
     private void Update()
@@ -24,7 +25,13 @@ public class ButtonManager : MonoBehaviour
         }
 
         tutorialActive();
+        //Debug.Log(pauseAvailable);
 
+        if (backToPause)
+        {
+            pauseAvailable = true;
+            backToPause = false;
+        }
     }
 
     public void pauseGame()
